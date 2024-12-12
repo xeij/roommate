@@ -1,0 +1,16 @@
+name: Automate Issue Assignment
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  assign-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign Issue
+        uses: actions-ecosystem/action-assign@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          assignees: Stevieb253
+
